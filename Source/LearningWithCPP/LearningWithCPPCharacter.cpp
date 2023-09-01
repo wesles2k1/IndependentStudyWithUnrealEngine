@@ -1,6 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "IndependentStudyCharacter.h"
+#include "LearningWithCPPCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
@@ -12,9 +12,9 @@
 
 
 //////////////////////////////////////////////////////////////////////////
-// AIndependentStudyCharacter
+// ALearningWithCPPCharacter
 
-AIndependentStudyCharacter::AIndependentStudyCharacter()
+ALearningWithCPPCharacter::ALearningWithCPPCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -51,7 +51,7 @@ AIndependentStudyCharacter::AIndependentStudyCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
-void AIndependentStudyCharacter::BeginPlay()
+void ALearningWithCPPCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
@@ -69,7 +69,7 @@ void AIndependentStudyCharacter::BeginPlay()
 //////////////////////////////////////////////////////////////////////////
 // Input
 
-void AIndependentStudyCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+void ALearningWithCPPCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent)) {
@@ -79,16 +79,16 @@ void AIndependentStudyCharacter::SetupPlayerInputComponent(class UInputComponent
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
 
 		//Moving
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AIndependentStudyCharacter::Move);
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ALearningWithCPPCharacter::Move);
 
 		//Looking
-		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AIndependentStudyCharacter::Look);
+		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &ALearningWithCPPCharacter::Look);
 
 	}
 
 }
 
-void AIndependentStudyCharacter::Move(const FInputActionValue& Value)
+void ALearningWithCPPCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
@@ -111,7 +111,7 @@ void AIndependentStudyCharacter::Move(const FInputActionValue& Value)
 	}
 }
 
-void AIndependentStudyCharacter::Look(const FInputActionValue& Value)
+void ALearningWithCPPCharacter::Look(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D LookAxisVector = Value.Get<FVector2D>();

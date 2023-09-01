@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class IndependentStudy : ModuleRules
+public class LearningWithCPP : ModuleRules
 {
-	public IndependentStudy(ReadOnlyTargetRules Target) : base(Target)
+	public LearningWithCPP(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 

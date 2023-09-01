@@ -5,11 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
-#include "IndependentStudyCharacter.generated.h"
+#include "LearningWithCPPCharacter.generated.h"
 
 
 UCLASS(config=Game)
-class AIndependentStudyCharacter : public ACharacter
+class ALearningWithCPPCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -38,7 +38,7 @@ class AIndependentStudyCharacter : public ACharacter
 	class UInputAction* LookAction;
 
 public:
-	AIndependentStudyCharacter();
+	ALearningWithCPPCharacter();
 	
 
 protected:

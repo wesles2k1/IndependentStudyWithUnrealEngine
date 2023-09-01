@@ -4,15 +4,15 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
-#include "IndependentStudyGameMode.generated.h"
+#include "LearningWithCPPGameMode.generated.h"
 
 UCLASS(minimalapi)
-class AIndependentStudyGameMode : public AGameModeBase
+class ALearningWithCPPGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
 public:
-	AIndependentStudyGameMode();
+	ALearningWithCPPGameMode();
 };
 
 

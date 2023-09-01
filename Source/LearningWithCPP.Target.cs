@@ -3,13 +3,13 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class IndependentStudyEditorTarget : TargetRules
+public class LearningWithCPPTarget : TargetRules
 {
-	public IndependentStudyEditorTarget(TargetInfo Target) : base(Target)
+	public LearningWithCPPTarget(TargetInfo Target) : base(Target)
 	{
-		Type = TargetType.Editor;
+		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;
-		ExtraModuleNames.Add("IndependentStudy");
+		ExtraModuleNames.Add("LearningWithCPP");
 	}
 }
