@@ -18,10 +18,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Abilities")
 	void SpawnActor();
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AActor> actorBPToSpawn;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FTransform spawnTransform;
 
 protected:
