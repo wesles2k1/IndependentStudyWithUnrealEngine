@@ -15,7 +15,7 @@ public:
 	UCTemperatureCalculator();
 
 	UFUNCTION(BlueprintCallable) FText Calculate(FText inputValue, FText inputUnit);
-
-	//int32 testValue;
+	
+	UFUNCTION(BlueprintCallable) float CalculateBad(float inputValue, FString inputUnit);
 
 };
