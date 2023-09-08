@@ -12,6 +12,7 @@ This project will be divided into three portions: first, to get acquainted with 
     - [9/3/2023 - Built and Implemented Temperature Converter C++ Object](#9/3/2023)
   - [Week 2 - Documentation, Enumerations, and an Animal Selector](#week2)
     - [9/5/2023 - New Parameters and Documentation](#9/5/2023)
+    - [9/7/2023 - Built Animal Selector UI](#9/7/2023)
 
 <a name="part1"></a>
 ## Part 1 - C++ in Unreal Engine
@@ -105,3 +106,10 @@ This project will be divided into three portions: first, to get acquainted with 
   The (Bad) results:
   
   ![CalculateBadResultsInt](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/225e3d4b-627f-4b95-90e9-bce340c46ad0)
+
+<a name="9/7/2023"></a>
+#### 9/7/2023 - Built Animal Selector UI
+
+  The UI for the next goal, the animal selector, has been created. Animals will be dynamically listed according to a predetermined array of AnimalT enumerations. Each animal will have an exclusive radio button, and the select button will grab that animal's associated enumeration, pass it down to a C++ object, and retreive a string to output.
+
+![AnimalSelectorBasicMenu](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/f810bda4-f590-4db8-8d4e-63575444f371)
