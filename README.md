@@ -13,6 +13,7 @@ This project will be divided into three portions: first, to get acquainted with 
   - [Week 2 - Documentation, Enumerations, and an Animal Selector](#week2)
     - [9/5/2023 - New Parameters and Documentation](#9/5/2023)
     - [9/7/2023 - Built Animal Selector UI](#9/7/2023)
+    - [9/8/2023 - Built CAnimalT Enum and Completed Animal Selector](#9/8/2023)
 
 <a name="part1"></a>
 ## Part 1 - C++ in Unreal Engine
@@ -112,4 +113,37 @@ This project will be divided into three portions: first, to get acquainted with 
 
   The UI for the next goal, the animal selector, has been created. Animals will be dynamically listed according to a predetermined array of AnimalT enumerations. Each animal will have an exclusive radio button, and the select button will grab that animal's associated enumeration, pass it down to a C++ object, and retreive a string to output.
 
-![AnimalSelectorBasicMenu](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/f810bda4-f590-4db8-8d4e-63575444f371)
+  ![AnimalSelectorBasicMenu](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/f810bda4-f590-4db8-8d4e-63575444f371)
+
+<a name="9/8/2023"></a>
+#### 9/8/2023 - Built CAnimalT Enum and Completed Animal Selector
+
+  The day began simply with the construction of an enumeration, CAnimalT, to be used in this week's project. CAnimalT began as an unscoped enumeration, but upon seeing in many tutorials that scoped enumerations were being used, the topic was researched more and determined to be the way to go here.
+  
+  ![CAnimalTH](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/f9bdf0f1-b46c-49dc-bbe1-4d9600a1cd74)
+
+  With the creation of the CAnimalT, it was time to give it some functionality. The goals of this week is to have an enumeration that can be:
+
+  - Incremented
+  - Converted to a string, and
+  - Converted to an action
+
+  For the purposes of this week, converting an CAnimalT to an "action" meant returning a string of what noise an animal makes (where the conversion to a "string" refers to returning the enumeration itself in string form). The functionality for this can be seen below:
+  
+  ![CAnimalSelectorH](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/9fe015e5-40da-4ff6-9606-f0daea81f775)
+  
+  ![CAnimalSelectorIncrement](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/44e672a5-29b6-485a-a45a-78e5d184425f)
+  
+  ![CAnimalSelectorDecrement](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/425007ab-ada3-4555-9f8c-5188dcdbe2a6)
+  
+  ![CAnimalSelectorToString Action](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/27f3c0da-8003-4a70-abb4-ae699f265c76)
+
+  These were then worked into the widget Blueprints for use. The widget made yesterday didn't seem to have any good way to demonstrate the incrementation of CAnimalT, so a second was created to be formatted differently. However, the first version was so close to being done and seems different enough to warrent keeping it, so there are two slightly different, but different enough versions of the Animal Selector. Below is a part of the second version, where both the incrementation functionality and the action fucntionality were implemented:
+  
+  ![AnimalSelectorMenuWidget2BP](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/13043de6-a521-4069-a472-f40d0def390a)
+
+  Finally, here are the results of this days work. The first video demonstrates the first, original Animal Selector, while the second demonstrates the new version.
+  
+  https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/1d5eaee1-d444-4f3d-8bbb-361e9b175d70
+  
+  https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/7768b5c6-d622-4f9c-b683-8903f4822b74
