@@ -17,10 +17,13 @@ public:
 	UCAnimalSelector();
 
 	UFUNCTION(BlueprintCallable)
-	CAnimalT Increment(CAnimalT animal);
+	CAnimalT Increment(UPARAM(ref) CAnimalT& animal);
 
 	UFUNCTION(BlueprintCallable)
-	FString Stringify(CAnimalT animal);
+	CAnimalT Decrement(UPARAM(ref) CAnimalT& animal);
+
+	UFUNCTION(BlueprintCallable)
+	FString ToString(CAnimalT animal);
 
 	UFUNCTION(BlueprintCallable)
 	FString Action(CAnimalT animal);

@@ -3,12 +3,12 @@
 #pragma once
 
 UENUM(BlueprintType)
-enum CAnimalT
+enum class CAnimalT : uint8
 {
-	DEFAULT UMETA(DisplayName = "None"),
+	DEFAULT	UMETA(DisplayName = "None"),
 
-	DOG	UMETA(DisplayName = "Dog"),
-	CAT UMETA(DisplayName = "Cat"),
-	HORSE UMETA(DisplayName = "Horse"),
-	FOX UMETA(DisplayName = "Fox")
+	DOG		UMETA(DisplayName = "Dog"),
+	CAT		UMETA(DisplayName = "Cat"),
+	HORSE	UMETA(DisplayName = "Horse"),
+	FOX		UMETA(DisplayName = "Fox")
 };
