@@ -10,5 +10,6 @@ enum class CAnimalT : uint8
 	DOG		UMETA(DisplayName = "Dog"),
 	CAT		UMETA(DisplayName = "Cat"),
 	HORSE	UMETA(DisplayName = "Horse"),
-	FOX		UMETA(DisplayName = "Fox")
+	FOX		UMETA(DisplayName = "Fox"),
+	CHICKEN	UMETA(DisplayName = "Chicken")
 };

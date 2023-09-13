@@ -6,15 +6,15 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "CAnimalSelector.generated.h"
+#include "CAnimalProcessor.generated.h"
 
 UCLASS(Blueprintable)
-class LEARNINGWITHCPP_API UCAnimalSelector : public UObject
+class LEARNINGWITHCPP_API UCAnimalProcessor : public UObject
 {
 	GENERATED_BODY()
 
 public:
-	UCAnimalSelector();
+	UCAnimalProcessor();
 
 	UFUNCTION(BlueprintCallable)
 	CAnimalT Increment(UPARAM(ref) CAnimalT& animal);

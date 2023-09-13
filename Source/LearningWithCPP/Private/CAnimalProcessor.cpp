@@ -1,16 +1,16 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "CAnimalSelector.h"
+#include "CAnimalProcessor.h"
 
 #include "CAnimalT.h"
 
-UCAnimalSelector::UCAnimalSelector()
+UCAnimalProcessor::UCAnimalProcessor()
 {
 
 }
 
-CAnimalT UCAnimalSelector::Increment(CAnimalT& animal)
+CAnimalT UCAnimalProcessor::Increment(CAnimalT& animal)
 {
 	// Works, but not particularly great when adding/rearranging CAnimalT
 	switch (animal)
@@ -25,6 +25,9 @@ CAnimalT UCAnimalSelector::Increment(CAnimalT& animal)
 		animal = CAnimalT::FOX;
 		break;
 	case CAnimalT::FOX:
+		animal = CAnimalT::CHICKEN;
+		break;
+	case CAnimalT::CHICKEN:
 		animal = CAnimalT::DOG;
 		break;
 	}
@@ -32,13 +35,13 @@ CAnimalT UCAnimalSelector::Increment(CAnimalT& animal)
 	return animal;
 }
 
-CAnimalT UCAnimalSelector::Decrement(CAnimalT& animal)
+CAnimalT UCAnimalProcessor::Decrement(CAnimalT& animal)
 {
 	// Works, but not particularly great when adding/rearranging CAnimalT
 	switch (animal)
 	{
 	case CAnimalT::DOG:
-		animal = CAnimalT::FOX;
+		animal = CAnimalT::CHICKEN;
 		break;
 	case CAnimalT::CAT:
 		animal = CAnimalT::DOG;
@@ -49,12 +52,15 @@ CAnimalT UCAnimalSelector::Decrement(CAnimalT& animal)
 	case CAnimalT::FOX:
 		animal = CAnimalT::HORSE;
 		break;
+	case CAnimalT::CHICKEN:
+		animal = CAnimalT::FOX;
+		break;
 	}
 
 	return animal;
 }
 
-FString UCAnimalSelector::ToString(CAnimalT animal)
+FString UCAnimalProcessor::ToString(CAnimalT animal)
 {
 	FText textVar;
 
@@ -65,7 +71,7 @@ FString UCAnimalSelector::ToString(CAnimalT animal)
 	return textVar.ToString();
 }
 
-FString UCAnimalSelector::Action(CAnimalT animal)
+FString UCAnimalProcessor::Action(CAnimalT animal)
 {
 	FString stringVar{ "" };
 
@@ -82,6 +88,9 @@ FString UCAnimalSelector::Action(CAnimalT animal)
 		break;
 	case CAnimalT::FOX:
 		stringVar = "Ring-ding-ding-ding-dingeringeding!";
+		break;
+	case CAnimalT::CHICKEN:
+		stringVar = "Cluck!";
 		break;
 	case CAnimalT::DEFAULT:
 		stringVar = "No animal selected.";
