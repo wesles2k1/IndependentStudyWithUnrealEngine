@@ -14,6 +14,8 @@ This project will be divided into three portions: first, to get acquainted with 
     - [9/5/2023 - New Parameters and Documentation](#9/5/2023)
     - [9/7/2023 - Built Animal Selector UI](#9/7/2023)
     - [9/8/2023 - Built CAnimalT Enum and Completed Animal Selector](#9/8/2023)
+  - [Week 3 - C++ Actors as Input and Output, Spawning Animals, and the First Factory](#week3)
+    - [9/12/2023 - Building an Animal Hierarchy and Starting the Factory](#9/12/2023)
 
 <a name="part1"></a>
 ## Part 1 - C++ in Unreal Engine
@@ -147,3 +149,45 @@ This project will be divided into three portions: first, to get acquainted with 
   https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/1d5eaee1-d444-4f3d-8bbb-361e9b175d70
   
   https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/7768b5c6-d622-4f9c-b683-8903f4822b74
+
+<a name="week3"></a>
+### Week 3 - C++ Actors as Input and Output, Spawning Animals, and the First Factory
+
+  For what is likely the last week in the first part of this project, the overarching goal is to create a simple class hierarchy in C++, use it to demonstrate custom object communication via parameters and/or return values, and to build a simple factory in C++ to create objects from this hierarchy. This will be done by expanding the Animal Selector that was built last week: A hierarchy of CAnimals will be build from which to derive CDog, CCat, and so on. Hopefully, by the end of the week the Animal Selector may be used to spawn tangible animals. If time permits, automatic movement may be added to these animals.
+
+<a name="9/12/2023"></a>
+#### 9/12/2023 - Building an Animal Hierarchy and Starting the Factory
+
+  Much was learned this day, though progress was not as fast as expected. The milestones reached this day were the acquisition of simple animal models to use, the construction of an CAnimal hierarchy, some light reworking of the Animal Selector Widget 2 to fit the purposes of this week, and the start of the factory to be used.
+
+  Below is an image of some of the animal assets collected from [here](https://www.cgtrader.com/free-3d-models/animals/other/lowpoly-animals-pack-e9e2d564-1080-42a0-af25-216b217c9de6). As might be noticed, a chicken is present. It (the chicken) has been added to the enumeration that is planned to be utilized by the factory.
+
+  ![AnimalAssets](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/c481543c-e7a4-4551-86e7-c166828d9621)
+
+  The animal selection menu has been slightly adjusted to account for spawning animals. The Blueprint changes will be shown later.
+
+  ![AnimalWidgetNowSpawns](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/1f2b60d0-df5d-4128-98fe-4d073d912403)
+
+  On the C++ side of things, many new classes were created and the CAnimalSelector was renamed to CAnimalProcessor to better reflect its purpose.
+  
+  ![AnimalC++Files9-12](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/95f8cfc2-c64e-412b-a05f-6a76326f47c4)
+
+  The CAnimalBase was derived from Unreal's Character class. In retrospect, it might have been more ideal to derive it from the Actor class so as not to be forced to use a skeletal mesh (which was a bit of an ordeal on its own and will likely be in the next days to come), but it is providing a good learning oppertunity and allows built-in movement functionality, should that ever be desired. For now, none of the derived animals have been altered beyond their creation. Below are the files for CAnimalBase. Though there were some changes made along the way when trying to figure out mesh setting, they were ultimately reverted and are at the default settings. It was also at this point, when researching mesh setting through C++, that I saw a suggestion that external assets such as meshes should probably be set in Blueprints since their file paths would have to be hard-coded in C++, something that does not sound at all desirable. For the time being, the mesh is set at the blueprint layer (more on that later).
+  
+  ![CAnimalBaseH1](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/a393a040-1efe-41e9-a21f-6f2915d9665d)
+  
+  ![CAnimalBaseCPP1](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/dfdca25b-d121-4647-95dd-77a51b1673e0)
+
+  The factory is proving tricky to learn in the Unreal Engine setting, but progress is slowly being made. The facotry was derived simply from the Unreal Object class. Following and stitching together a few tutorials and other pieces of infomation found online to adjust for the specific circumstances, the following result was reached. A function to spawn an animal takes in a CAnimalT to determine which animal to create and a transform value is passed in to define where in the world the animal is to spawn. That said, it became apparent that Unreal Engine does not particularly like the normal C++ method of instanciating objects when it comes to UObjects and will refuse to compile. The alternative is, instead of using the clasic `new` operator, to physically spawn the actor in the world. This took a while to get working properly, and while CAnimal subclasses can't be chosen to be spawned yet, the basic CAnimalBase is able to be spawned in the world and returned for the Blueprint's reference. The next large step here would be to figure out how to set AnimalToSpawn desirably at the C++ level so that the CAnimalT may be used to correctly select an animal.
+  
+  ![CAnimalFactoryH1](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/2312d891-1693-411e-adb5-b881b7d29133)
+  
+  ![CAnimalFactoryCPP1](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/840aaa5e-4015-43bf-915c-f1807da5afd1)
+
+  Lastly, the following is the additions made to the widget Blueprint to implement the factory so far. Upon creation, the widget creates an CAnimalFactory to store for reference at the same time as the CAnimalProcessor. Using this reference, the click of a button will tel the factory to spawn an animal. Again, while a CAnimalT is being passed in, it is not being used quite yet, and a CAnimalBase will be spawned based on the location of the widget's Owner, the physical object the user interacts with to prompt the menu. Eventually, the Set Animal node will be implemented and likely will be converted to an array of Animals instead of just one as it is now. The final part of this block is the dreaded mesh-set mentioned earlier. The presence of this portion, as of now, is used to confirm that an actor is indeed being spawned, in addition to where it is. The big question now is that if the mesh isn't desirable to be set at the C++ level, what is the best way to set it at the Blueprint level? Is the Blueprint level actually the answer or should it just be set at the C++ level instead? Hopefully this does not prove to be too much of a challenge. 
+  
+  ![AnimalSpawningWidgetBP1](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/c8ef374d-ab1a-49ae-be5d-eea362d709df)
+
+  ![CAnimalSpawned](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/b142a0e1-62df-4b84-a5de-9d1d7fdeaca7)
+
+  Hopefully, the end of the next full day of work will see the factory fully functioning as intended and the mesh problem will be solved.
