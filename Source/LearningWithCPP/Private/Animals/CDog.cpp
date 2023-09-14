@@ -3,3 +3,7 @@
 
 #include "Animals/CDog.h"
 
+ACDog::ACDog()
+{
+	animalType = CAnimalT::DOG;
+}

@@ -13,5 +13,7 @@ UCLASS()
 class LEARNINGWITHCPP_API ACFox : public ACAnimalBase
 {
 	GENERATED_BODY()
-	
+
+public:
+	ACFox();	
 };

@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include "CAnimalT.h"
+
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "CAnimalBase.generated.h"
@@ -19,7 +21,11 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	CAnimalT animalType{ CAnimalT::DEFAULT };
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

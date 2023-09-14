@@ -3,3 +3,7 @@
 
 #include "Animals/CFox.h"
 
+ACFox::ACFox()
+{
+	animalType = CAnimalT::FOX;
+}

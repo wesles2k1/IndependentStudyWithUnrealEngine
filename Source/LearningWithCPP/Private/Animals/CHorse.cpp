@@ -3,3 +3,7 @@
 
 #include "Animals/CHorse.h"
 
+ACHorse::ACHorse()
+{
+	animalType = CAnimalT::HORSE;
+}

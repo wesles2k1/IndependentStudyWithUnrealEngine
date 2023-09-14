@@ -13,5 +13,7 @@ UCLASS()
 class LEARNINGWITHCPP_API ACChicken : public ACAnimalBase
 {
 	GENERATED_BODY()
-	
+
+public:
+	ACChicken();	
 };

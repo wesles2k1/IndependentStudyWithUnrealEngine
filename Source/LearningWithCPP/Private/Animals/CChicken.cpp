@@ -3,3 +3,7 @@
 
 #include "Animals/CChicken.h"
 
+ACChicken::ACChicken()
+{
+	animalType = CAnimalT::CHICKEN;
+}

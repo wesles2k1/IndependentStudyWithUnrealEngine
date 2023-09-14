@@ -13,5 +13,7 @@ UCLASS()
 class LEARNINGWITHCPP_API ACHorse : public ACAnimalBase
 {
 	GENERATED_BODY()
-	
+
+public:
+	ACHorse();
 };
