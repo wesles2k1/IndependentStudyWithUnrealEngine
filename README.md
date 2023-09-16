@@ -16,6 +16,7 @@ This project will be divided into three portions: first, to get acquainted with 
     - [9/8/2023 - Built CAnimalT Enum and Completed Animal Selector](#9/8/2023)
   - [Week 3 - C++ Actors as Input and Output, Spawning Animals, and the First Factory](#week3)
     - [9/12/2023 - Building an Animal Hierarchy and Starting the Factory](#9/12/2023)
+    - [9/15/2023 - Functioning Factory and Mesh Problems](#9/15/2023)
 
 <a name="part1"></a>
 ## Part 1 - C++ in Unreal Engine
@@ -184,10 +185,33 @@ This project will be divided into three portions: first, to get acquainted with 
   
   ![CAnimalFactoryCPP1](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/840aaa5e-4015-43bf-915c-f1807da5afd1)
 
-  Lastly, the following is the additions made to the widget Blueprint to implement the factory so far. Upon creation, the widget creates an CAnimalFactory to store for reference at the same time as the CAnimalProcessor. Using this reference, the click of a button will tel the factory to spawn an animal. Again, while a CAnimalT is being passed in, it is not being used quite yet, and a CAnimalBase will be spawned based on the location of the widget's Owner, the physical object the user interacts with to prompt the menu. Eventually, the Set Animal node will be implemented and likely will be converted to an array of Animals instead of just one as it is now. The final part of this block is the dreaded mesh-set mentioned earlier. The presence of this portion, as of now, is used to confirm that an actor is indeed being spawned, in addition to where it is. The big question now is that if the mesh isn't desirable to be set at the C++ level, what is the best way to set it at the Blueprint level? Is the Blueprint level actually the answer or should it just be set at the C++ level instead? Hopefully this does not prove to be too much of a challenge. 
+  Lastly, the following is the additions made to the widget Blueprint to implement the factory so far. Upon creation, the widget creates an CAnimalFactory to store for reference at the same time as the CAnimalProcessor. Using this reference, the click of a button will tell the factory to spawn an animal. Again, while a CAnimalT is being passed in, it is not being used quite yet, and a CAnimalBase will be spawned based on the location of the widget's Owner, the physical object the user interacts with to prompt the menu. Eventually, the Set Animal node will be implemented and likely will be converted to an array of Animals instead of just one as it is now. The final part of this block is the dreaded mesh-set mentioned earlier. The presence of this portion, as of now, is used to confirm that an actor is indeed being spawned, in addition to where it is. The big question now is that if the mesh isn't desirable to be set at the C++ level where the asset would be hard referenced, what is the best way to set it at the Blueprint level? Is the Blueprint level actually the answer or should it just be set at the C++ level instead? Hopefully this does not prove to be too much of a challenge. 
   
   ![AnimalSpawningWidgetBP1](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/c8ef374d-ab1a-49ae-be5d-eea362d709df)
 
   ![CAnimalSpawned](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/b142a0e1-62df-4b84-a5de-9d1d7fdeaca7)
 
   Hopefully, the end of the next full day of work will see the factory fully functioning as intended and the mesh problem will be solved.
+
+<a name="9/15/2023"></a>
+#### 9/15/2023 - Functioning Factory and Mesh Problems
+
+  Where the factory previously only spawned a CAnimalBase, it has been improved to actually be able to spawn an animal based on the input desired CAnimalT:
+  
+  ![FactorySpawnAnimalDefinition](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/8c58c8ac-2310-47c4-afd6-0bf2c581f63b)
+
+  The differences for each AnimalBase subclass end at their name and are currently functionally identical to each other. Their purpose is currently only to showcase a working simple factory.
+  
+  Below is the simulator results using the Select button. It has been implemented at the Blueprint level so that the animals spawn in a line and stop spawning after the 5th for the sake of simplicity. The row of animals to the left are just static meshes on display and are not related to the factory in any way.
+  
+  ![AnimalSpawnerBasic](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/28e090f0-e7f0-4249-bdd2-90d4ed367535)
+
+  While it appears that this week's goal was reached, and, in a way, it was, the mesh problem was not yet solved. To demonstrate the functioning factory, the meshes were set at the Blueprint level.
+  
+  ![BPAnimalMeshes](https://github.com/wesles2k1/IndependentStudyWithUnrealEngine/assets/98764304/a4405f9f-1172-45f0-a655-e478b5521c28)
+
+  After consulting the supervisor for this independent study, it seems the best course of action will next be to learn about using DataTables as a configuration of sorts to hold data used to construct objects, such as meshes. This way, asset files may be renamed or moved around without breaking anything. This also will likely be useful in setting additional data for objects to be used so that the factory may get access to this information in order to correctly instantiate the object it wishes to make. Additionally, it would seem that it is desirable to create a factory at a wider scope than where it currently is, such as at the map level or even the game level. [This](https://www.youtube.com/playlist?list=PLitYOdh3OOzhJBCRqYZEGBzJYemA-SH8Z) tutorial series seems to discuss this in great detail and will likely be used in improving this project. Even beyond this specific problem, this tutorial series seems extremely relevant in later parts of this project, expecially if the chosen path is that of an inventory system.
+  
+  Still, even when this solves the issue of how to set a desired mesh through the factory, there is still the question of how one may apply transformations or other visual adjustments to something like this mesh without the aid of a viewport. Trial and error through data values comes to mind, but that hardly seems effective.
+
+  It seems that the correct course of action by this point would be to take a step back, watching through a bit of the previously mentioned tutorial series and exploring the Factory Method and Abstract Factory design patterns a bit more to get a better understanding of their purpose, importance, and methods of implementation, both internally and externally. The goal for next week will likely be improving upon what has been done this week: improving the factory's spawn method and level of implementation and implementing a data table for the factory to use in spawning animals.
