@@ -1,17 +1,25 @@
 #pragma once
 
-#include <vector>
-
 #include "../Map/Map.h"
 #include "../MapParameters/MapOption.h"
 
+#include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "MapGenerator.generated.h"
+
 // Static class that builds a maze based on set MapTypes
-class MapGenerator final {
+UCLASS(BlueprintType)
+class LEARNINGWITHCPP_API UMapGenerator final : public UObject {
+    GENERATED_BODY()
+    
     public:
-        static void SetMapTypes(std::vector<MapOption> givenMapTypes);
-        static std::vector<MapOption> GetMapTypes();
+        UFUNCTION(BlueprintCallable)
+        static void SetMapTypes(TArray<FMapOption> givenMapTypes);
+        UFUNCTION(BlueprintCallable)
+        static TArray<FMapOption> GetMapTypes();
 
         // Two rooms horizontally connected by a single door
+        //UFUNCTION(BlueprintCallable)
         static Map* BuildMazeTwoRooms();
         // Builds a maze by adding rooms to doors that have been randomly added to rooms
         static Map* BuildMazeProcedural();
@@ -22,20 +30,20 @@ class MapGenerator final {
         
     private:
         // Private deleted constructor to prevent instantiation of this class
-        MapGenerator() = delete;
+        //UMapGenerator() = delete;
         
         // A work around to have a private static non-constant variable with a default value
         // This is treated similarly to a variable, just wrapped within a function
-        static std::vector<MapOption>& MapTypes();
+        static TArray<FMapOption>& MapTypes();
 
         // Map Factory Method
         static Map* MakeMap();
 
-        static Room* BuildRoom(int id, /*Direction direction, */std::vector<MapOption> mapTypes);
+        static Room* BuildRoom(int id, /*Direction direction, */TArray<FMapOption> mapTypes);
 
         // Returns a random MapFactory from the list based on corresponding odds
-        static MapFactory* RandomFactory(std::vector<MapOption>& mapTypes);
+        static MapFactory* RandomFactory(TArray<FMapOption>& mapTypes);
 
-        // Reformats given MapOptions, removing duplicate factories, impossible odds, and normalizing odds to (0.0, 1.0]
-        static void PrepMapOptions(std::vector<MapOption>& mapTypes);
+        // Reformats given FMapOptions, removing duplicate factories, impossible odds, and normalizing odds to (0.0, 1.0]
+        static void PrepFMapOptions(TArray<FMapOption>& mapTypes);
 };

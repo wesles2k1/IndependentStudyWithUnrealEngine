@@ -1,16 +1,11 @@
 #pragma once
 
-#include <string>
-#include <algorithm>
-
 #include "../Singleton/Singleton.h"
 #include "../Map/MapFactory/MapFactory.h"
 #include "../Map/MapFactory/BombMapFactory/BombMapFactory.h"
 #include "../Map/MapFactory/BombMapFactory/AtomicBombMapFactory/AtomicBombMapFactory.h"
 #include "../Map/MapFactory/EnchantedMapFactory/EnchantedMapFactory.h"
 #include "../Map/MapFactory/LockMapFactory/LockMapFactory.h"
-
-// This will be exposed to Unreal Engine's Blueprints
 
 // Anytime a new MapFactory is added, it must be added to:
 //      this file's #include
@@ -21,6 +16,7 @@
 
 // A complex enumeration that specifies a type of map
 class MapType {
+
     public:
         enum MapTypeEnum {
             NULL_ENUM,
@@ -36,15 +32,15 @@ class MapType {
         MapType(MapTypeEnum input): enumVal(input) {};
 
         // Allows comparison with MapTypeEnum constants
-        operator MapTypeEnum() const { return enumVal; }
+        operator MapTypeEnum() const;
 
         // Returns the corresponding MapFactory
         MapFactory* ToMapFactory() const;
 
-        // Takes a string and sets/returns this MapType
-        MapType StringToMapType(std::string inputString);
-        // Returns the corresponding string
-        explicit operator std::string() const;
+        // Sets this enum to the passed in string (if valid)
+        MapType StringToMapType(FString inputString);
+        // Returns the string this enum represents
+        FString GetString() const;
 
     private:
         MapTypeEnum enumVal{MapTypeEnum::Default};

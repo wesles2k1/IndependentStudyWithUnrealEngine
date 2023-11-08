@@ -4,6 +4,10 @@
 // Public //
 // ------ //
 
+MapType::operator MapTypeEnum() const {
+    return enumVal;
+}
+
 MapFactory* MapType::ToMapFactory() const {
     MapFactory* returnFactory;
 
@@ -30,8 +34,8 @@ MapFactory* MapType::ToMapFactory() const {
     return returnFactory;
 }
 
-MapType MapType::StringToMapType(std::string inputString) {
-    std::transform(inputString.begin(), inputString.end(), inputString.begin(), [](unsigned char c){return std::tolower(c);});
+MapType MapType::StringToMapType(FString inputString) {
+    //std::transform(inputString.begin(), inputString.end(), inputString.begin(), [](unsigned char c){return std::tolower(c);});
 
     if(inputString == "default") {
         *this = MapType::Default;
@@ -50,8 +54,8 @@ MapType MapType::StringToMapType(std::string inputString) {
     return *this;
 }
 
-MapType::operator std::string() const {
-    std::string returnString{""};
+FString MapType::GetString() const {
+    FString returnString{""};
 
     switch(enumVal) {
         case MapTypeEnum::Default:
