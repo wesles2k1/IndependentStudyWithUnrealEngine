@@ -15,7 +15,7 @@ class LEARNINGWITHCPP_API UMapGenerator final : public UObject {
     public:
         UFUNCTION(BlueprintCallable)
         static void SetMapTypes(TArray<FMapOption> givenMapTypes);
-        UFUNCTION(BlueprintCallable)
+        UFUNCTION(BlueprintCallable, BlueprintPure)
         static TArray<FMapOption> GetMapTypes();
 
         // Two rooms horizontally connected by a single door

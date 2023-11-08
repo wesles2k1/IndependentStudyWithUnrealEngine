@@ -12,7 +12,7 @@ struct FMapOption {
     GENERATED_BODY()
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    FMapType factory{ FMapType::Default };
+    TEnumAsByte<EMapType> factory{ EMapType::Default };
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     float odds{1.0};
 };

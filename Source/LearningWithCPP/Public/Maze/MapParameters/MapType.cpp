@@ -4,27 +4,23 @@
 // Public //
 // ------ //
 
-FMapType::operator MapTypeEnum() const {
-    return enumVal;
-}
-
-MapFactory* FMapType::ToMapFactory() const {
+MapFactory* UMapTypeProcessor::ToMapFactory(EMapType inputMapType) {
     MapFactory* returnFactory;
 
-    switch(enumVal) {
-        case MapTypeEnum::Default:
+    switch(inputMapType) {
+        case EMapType::Default:
             returnFactory = Singleton::Get<MapFactory>();
             break;
-        case MapTypeEnum::Enchanted:
+        case EMapType::Enchanted:
             returnFactory = Singleton::Get<EnchantedMapFactory>();
             break;
-        case MapTypeEnum::Bomb:
+        case EMapType::Bomb:
             returnFactory = Singleton::Get<BombMapFactory>();
             break;
-        case MapTypeEnum::AtomicBomb:
+        case EMapType::AtomicBomb:
             returnFactory = Singleton::Get<AtomicBombMapFactory>();
             break;
-        case MapTypeEnum::Lock:
+        case EMapType::Lock:
             returnFactory = Singleton::Get<LockMapFactory>();
             break;
         default:
@@ -34,43 +30,23 @@ MapFactory* FMapType::ToMapFactory() const {
     return returnFactory;
 }
 
-FMapType FMapType::StringToMapType(FString inputString) {
-    //std::transform(inputString.begin(), inputString.end(), inputString.begin(), [](unsigned char c){return std::tolower(c);});
-
-    if(inputString == "default") {
-        *this = FMapType::Default;
-    } else if(inputString == "enchanted") {
-        *this = FMapType::Enchanted;
-    } else if(inputString == "bomb") {
-        *this = FMapType::Bomb;
-    } else if(inputString == "atomic bomb") {
-        *this = FMapType::AtomicBomb;
-    } else if(inputString == "lock") {
-        *this = FMapType::Lock;
-    } else {
-        *this = FMapType::NULL_ENUM;
-    }
-    
-    return *this;
-}
-
-FString FMapType::GetString() const {
+FString UMapTypeProcessor::ToString(EMapType inputMapType) {
     FString returnString{""};
 
-    switch(enumVal) {
-        case MapTypeEnum::Default:
+    switch(inputMapType) {
+        case EMapType::Default:
             returnString = "Default";
             break;
-        case MapTypeEnum::Enchanted:
+        case EMapType::Enchanted:
             returnString = "Enchanted";
             break;
-        case MapTypeEnum::Bomb:
+        case EMapType::Bomb:
             returnString = "Bomb";
             break;
-        case MapTypeEnum::AtomicBomb:
+        case EMapType::AtomicBomb:
             returnString = "Atomic Bomb";
             break;
-        case MapTypeEnum::Lock:
+        case EMapType::Lock:
             returnString = "Lock";
             break;
         default:
@@ -78,4 +54,24 @@ FString FMapType::GetString() const {
     }
 
     return returnString;
+}
+
+EMapType UMapTypeProcessor::FromString(FString inputString) {
+    EMapType mapType{ EMapType::Default };
+
+    if(inputString == "default") {
+        mapType = EMapType::Default;
+    } else if(inputString == "enchanted") {
+        mapType = EMapType::Enchanted;
+    } else if(inputString == "bomb") {
+        mapType = EMapType::Bomb;
+    } else if(inputString == "atomic bomb") {
+        mapType = EMapType::AtomicBomb;
+    } else if(inputString == "lock") {
+        mapType = EMapType::Lock;
+    } else {
+        mapType = EMapType::NULL_ENUM;
+    }
+    
+    return mapType;
 }

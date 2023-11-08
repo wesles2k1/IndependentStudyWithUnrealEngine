@@ -103,7 +103,7 @@ Map* UMapGenerator::BuildMazeKruskal() {
 // ------- //
 
 TArray<FMapOption>& UMapGenerator::MapTypes() {
-    static TArray<FMapOption> mapTypes{ { {FMapType::Default, 1.0f} } };
+    static TArray<FMapOption> mapTypes{ { {EMapType::Default, 1.0f} } };
     return mapTypes;
 }
 
@@ -126,7 +126,7 @@ MapFactory* UMapGenerator::RandomFactory(TArray<FMapOption>& factories) {
     while(selectedFactory == nullptr && iter != factories.end()) {
         roll -= iter.operator*().odds;
         if(roll <= 0.0) {
-            selectedFactory = iter.operator*().factory.ToMapFactory();
+            selectedFactory = UMapTypeProcessor::ToMapFactory(iter.operator*().factory);
             // Use to see what factory was the result
             //std::cout << iter.operator*().factory << std::endl;
         }
@@ -165,7 +165,7 @@ void UMapGenerator::PrepFMapOptions(TArray<FMapOption>& factories) {
     // Remove any entries with impossible odds
     for(auto iter = tempFactories.CreateIterator(); iter; ++iter) {
         // Only keep entries with non-zero positive odds
-        if(iter->odds <= 0.0) {
+        if(iter->odds <= 0.0 || iter->factory == EMapType::NULL_ENUM) {
             iter.RemoveCurrent();
             iter--;
         }
@@ -189,11 +189,5 @@ void UMapGenerator::PrepFMapOptions(TArray<FMapOption>& factories) {
     // Default if every element has been removed (because of 0.0 odds)
     if(factories.IsEmpty()) {
         factories.Add({});
-    }
-
-    // Output the final list of factories for testing and debugging
-    for(auto iter = factories.CreateIterator(); iter; iter++) {
-        GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, *(iter->factory.GetString()));
-        //std::cout << static_cast<std::string>(iter->factory) << ", " << iter->odds << std::endl;
     }
 }
