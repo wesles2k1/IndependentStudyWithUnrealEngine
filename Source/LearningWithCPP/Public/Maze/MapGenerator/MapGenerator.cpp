@@ -103,7 +103,7 @@ Map* UMapGenerator::BuildMazeKruskal() {
 // ------- //
 
 TArray<FMapOption>& UMapGenerator::MapTypes() {
-    static TArray<FMapOption> mapTypes{ { {MapType::Default, 1.0f} } };
+    static TArray<FMapOption> mapTypes{ { {FMapType::Default, 1.0f} } };
     return mapTypes;
 }
 

@@ -4,11 +4,11 @@
 // Public //
 // ------ //
 
-MapType::operator MapTypeEnum() const {
+FMapType::operator MapTypeEnum() const {
     return enumVal;
 }
 
-MapFactory* MapType::ToMapFactory() const {
+MapFactory* FMapType::ToMapFactory() const {
     MapFactory* returnFactory;
 
     switch(enumVal) {
@@ -34,27 +34,27 @@ MapFactory* MapType::ToMapFactory() const {
     return returnFactory;
 }
 
-MapType MapType::StringToMapType(FString inputString) {
+FMapType FMapType::StringToMapType(FString inputString) {
     //std::transform(inputString.begin(), inputString.end(), inputString.begin(), [](unsigned char c){return std::tolower(c);});
 
     if(inputString == "default") {
-        *this = MapType::Default;
+        *this = FMapType::Default;
     } else if(inputString == "enchanted") {
-        *this = MapType::Enchanted;
+        *this = FMapType::Enchanted;
     } else if(inputString == "bomb") {
-        *this = MapType::Bomb;
+        *this = FMapType::Bomb;
     } else if(inputString == "atomic bomb") {
-        *this = MapType::AtomicBomb;
+        *this = FMapType::AtomicBomb;
     } else if(inputString == "lock") {
-        *this = MapType::Lock;
+        *this = FMapType::Lock;
     } else {
-        *this = MapType::NULL_ENUM;
+        *this = FMapType::NULL_ENUM;
     }
     
     return *this;
 }
 
-FString MapType::GetString() const {
+FString FMapType::GetString() const {
     FString returnString{""};
 
     switch(enumVal) {

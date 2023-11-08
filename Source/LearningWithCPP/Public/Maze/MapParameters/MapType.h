@@ -7,6 +7,10 @@
 #include "../Map/MapFactory/EnchantedMapFactory/EnchantedMapFactory.h"
 #include "../Map/MapFactory/LockMapFactory/LockMapFactory.h"
 
+#include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "MapType.generated.h"
+
 // Anytime a new MapFactory is added, it must be added to:
 //      this file's #include
 //      enum MapTypeEnum
@@ -15,7 +19,9 @@
 //      operator std::string()
 
 // A complex enumeration that specifies a type of map
-class MapType {
+USTRUCT(BlueprintType)
+struct FMapType {
+    GENERATED_BODY()
 
     public:
         enum MapTypeEnum {
@@ -28,8 +34,8 @@ class MapType {
             Lock
         };
 
-        MapType() {};
-        MapType(MapTypeEnum input): enumVal(input) {};
+        FMapType() {};
+        FMapType(MapTypeEnum input): enumVal(input) {};
 
         // Allows comparison with MapTypeEnum constants
         operator MapTypeEnum() const;
@@ -38,7 +44,7 @@ class MapType {
         MapFactory* ToMapFactory() const;
 
         // Sets this enum to the passed in string (if valid)
-        MapType StringToMapType(FString inputString);
+        FMapType StringToMapType(FString inputString);
         // Returns the string this enum represents
         FString GetString() const;
 

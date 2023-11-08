@@ -11,8 +11,8 @@ USTRUCT(BlueprintType)
 struct FMapOption {
     GENERATED_BODY()
 
-    //UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    MapType factory{MapType::Default};
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FMapType factory{ FMapType::Default };
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     float odds{1.0};
 };
