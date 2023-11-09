@@ -49,6 +49,9 @@ FString UMapTypeProcessor::ToString(EMapType inputMapType) {
         case EMapType::Lock:
             returnString = "Lock";
             break;
+        case EMapType::NULL_ENUM:
+            returnString = "Null map type";
+            break;
         default:
             returnString = "Unknown map type";
     }

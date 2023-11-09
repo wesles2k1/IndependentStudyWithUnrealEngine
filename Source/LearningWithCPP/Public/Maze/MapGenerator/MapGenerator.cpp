@@ -167,7 +167,7 @@ void UMapGenerator::PrepFMapOptions(TArray<FMapOption>& factories) {
         // Only keep entries with non-zero positive odds
         if(iter->odds <= 0.0 || iter->factory == EMapType::NULL_ENUM) {
             iter.RemoveCurrent();
-            iter--;
+            //iter--;
         }
     }
     
@@ -188,6 +188,12 @@ void UMapGenerator::PrepFMapOptions(TArray<FMapOption>& factories) {
 
     // Default if every element has been removed (because of 0.0 odds)
     if(factories.IsEmpty()) {
-        factories.Add({});
+        factories.Add({ EMapType::Default, 1.0f });
     }
+
+    // DEBUG OUTPUT
+    //for (auto iter = factories.CreateIterator(); iter; ++iter) {
+    //    GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, *(FString::SanitizeFloat(iter->odds)));
+    //    GEngine->AddOnScreenDebugMessage(-1, 10.0f, FColor::Green, *(UMapTypeProcessor::ToString(iter->factory)));
+    //}
 }
