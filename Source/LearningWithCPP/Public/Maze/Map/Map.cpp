@@ -1,13 +1,13 @@
 #include "Map.h"
 
-Map::Map() {
+AMap::AMap() {
     
 }
 
-void Map::AddRoom(Room* newRoom) {
+void AMap::AddRoom(Room* newRoom) {
     roomStorage.push_back(newRoom);
 }
 
-Room* Map::GetRoom(int id) const {
+Room* AMap::GetRoom(int id) const {
     return roomStorage[id];
 }

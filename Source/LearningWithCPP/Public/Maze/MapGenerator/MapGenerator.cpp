@@ -15,8 +15,8 @@ TArray<FMapOption> UMapGenerator::GetMapTypes() {
     return MapTypes();
 }
 
-Map* UMapGenerator::BuildMazeTwoRooms() {
-    Map* mapTemp{nullptr};
+AMap* UMapGenerator::BuildMazeTwoRooms() {
+    AMap* mapTemp{nullptr};
 
     mapTemp = MakeMap();
     Room* r1 = RandomFactory(MapTypes())->MakeRoom(1);
@@ -39,8 +39,8 @@ Map* UMapGenerator::BuildMazeTwoRooms() {
     return mapTemp;
 }
 
-Map* UMapGenerator::BuildMazeProcedural() {
-    Map* mapTemp{nullptr};
+AMap* UMapGenerator::BuildMazeProcedural() {
+    AMap* mapTemp{nullptr};
 
     mapTemp = MakeMap();
     Room* rootRoom = RandomFactory(MapTypes())->MakeRoom(1);
@@ -66,8 +66,8 @@ Map* UMapGenerator::BuildMazeProcedural() {
     return mapTemp;
 }
 
-Map* UMapGenerator::BuildMazeTree() {
-    Map* mapTemp{nullptr};
+AMap* UMapGenerator::BuildMazeTree() {
+    AMap* mapTemp{nullptr};
 
     mapTemp = MakeMap();
     Room* r1 = RandomFactory(MapTypes())->MakeRoom(1);
@@ -82,8 +82,8 @@ Map* UMapGenerator::BuildMazeTree() {
     return mapTemp;
 }
 
-Map* UMapGenerator::BuildMazeKruskal() {
-    Map* mapTemp{nullptr};
+AMap* UMapGenerator::BuildMazeKruskal() {
+    AMap* mapTemp{nullptr};
 
     mapTemp = MakeMap();
     Room* r1 = RandomFactory(MapTypes())->MakeRoom(1);
@@ -107,8 +107,8 @@ TArray<FMapOption>& UMapGenerator::MapTypes() {
     return mapTypes;
 }
 
-Map* UMapGenerator::MakeMap() {
-    return new Map();
+AMap* UMapGenerator::MakeMap() {
+    return NewObject<AMap>();
 }
 
 Room* UMapGenerator::BuildRoom(int id, /*Direction direction, */TArray<FMapOption> mapTypes) {
