@@ -20,16 +20,16 @@ class LEARNINGWITHCPP_API UMapGenerator final : public UObject {
 
         // Two rooms horizontally connected by a single door
         UFUNCTION(BlueprintCallable)
-        static AMap* BuildMazeTwoRooms();
+        static AMap* BuildMazeTwoRooms(UObject* context);
         // Builds a maze by adding rooms to doors that have been randomly added to rooms
         UFUNCTION(BlueprintCallable)
-        static AMap* BuildMazeProcedural();
+        static AMap* BuildMazeProcedural(UObject* context);
         // Builds a maze with the Binary Tree algorithm
         UFUNCTION(BlueprintCallable)
-        static AMap* BuildMazeTree();
+        static AMap* BuildMazeTree(UObject* context);
         // Builds a maze using Kruskal's algorithm; Makes a rectangularly filled maze
         UFUNCTION(BlueprintCallable)
-        static AMap* BuildMazeKruskal();
+        static AMap* BuildMazeKruskal(UObject* context);
         
     private:
         // Private deleted constructor to prevent instantiation of this class
@@ -40,9 +40,9 @@ class LEARNINGWITHCPP_API UMapGenerator final : public UObject {
         static TArray<FMapOption>& MapTypes();
 
         // Map Factory Method
-        static AMap* MakeMap();
+        static AMap* MakeMap(UObject* context);
 
-        static Room* BuildRoom(int id, /*Direction direction, */TArray<FMapOption> mapTypes);
+        static ARoom* BuildRoom(int id, /*Direction direction, */TArray<FMapOption> mapTypes);
 
         // Returns a random MapFactory from the list based on corresponding odds
         static MapFactory* RandomFactory(TArray<FMapOption>& mapTypes);

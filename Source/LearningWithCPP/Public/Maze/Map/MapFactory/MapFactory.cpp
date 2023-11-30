@@ -6,14 +6,14 @@
 
 // Factory Methods
 
-Room* MapFactory::MakeRoom(int id) const {
-    return new Room(id);
+ARoom* MapFactory::MakeRoom(int id) const {
+    return new ARoom(id);
 }
 
-Wall* MapFactory::MakeWall() const {
-    return new Wall();
+AWall* MapFactory::MakeWall() const {
+    return new AWall();
 }
 
-Door* MapFactory::MakeDoor(Room* room1, Room* room2) const {
-    return new Door(room1, room2);
+ADoor* MapFactory::MakeDoor(ARoom* room1, ARoom* room2) const {
+    return new ADoor(room1, room2);
 }

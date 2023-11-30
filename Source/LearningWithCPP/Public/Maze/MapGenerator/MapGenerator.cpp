@@ -15,13 +15,13 @@ TArray<FMapOption> UMapGenerator::GetMapTypes() {
     return MapTypes();
 }
 
-AMap* UMapGenerator::BuildMazeTwoRooms() {
+AMap* UMapGenerator::BuildMazeTwoRooms(UObject* context) {
     AMap* mapTemp{nullptr};
 
-    mapTemp = MakeMap();
-    Room* r1 = RandomFactory(MapTypes())->MakeRoom(1);
-    Room* r2 = RandomFactory(MapTypes())->MakeRoom(2);
-    Door* theDoor = RandomFactory(MapTypes())->MakeDoor(r1, r2);
+    mapTemp = MakeMap(context);
+    ARoom* r1 = RandomFactory(MapTypes())->MakeRoom(1);
+    ARoom* r2 = RandomFactory(MapTypes())->MakeRoom(2);
+    ADoor* theDoor = RandomFactory(MapTypes())->MakeDoor(r1, r2);
 
     mapTemp->AddRoom(r1);
     mapTemp->AddRoom(r2);
@@ -39,14 +39,14 @@ AMap* UMapGenerator::BuildMazeTwoRooms() {
     return mapTemp;
 }
 
-AMap* UMapGenerator::BuildMazeProcedural() {
+AMap* UMapGenerator::BuildMazeProcedural(UObject* context) {
     AMap* mapTemp{nullptr};
 
-    mapTemp = MakeMap();
-    Room* rootRoom = RandomFactory(MapTypes())->MakeRoom(1);
+    mapTemp = MakeMap(context);
+    ARoom* rootRoom = RandomFactory(MapTypes())->MakeRoom(1);
 
     mapTemp->AddRoom(rootRoom);
-    TArray<Door*> incompleteDoors;
+    TArray<ADoor*> incompleteDoors;
 
     // How can I store these rooms in a graph?
     // This needs to be done so rooms can share preexisting elements (like if a room happens to be placed adjacent to another room with an incomplete door or a wall)
@@ -54,7 +54,7 @@ AMap* UMapGenerator::BuildMazeProcedural() {
     for(int i{1}; i < 99; i++) {
         // Map should probably hold a nextID value to use
         // Select incomplete door
-        Room* roomTemp{BuildRoom(i + 1, MapTypes())};
+        ARoom* roomTemp{BuildRoom(i + 1, MapTypes())};
         // Connect roomTemp to existing room
         // Note doors with no connections
         // Somehow, note any other existing adjacent rooms and their connections
@@ -66,11 +66,11 @@ AMap* UMapGenerator::BuildMazeProcedural() {
     return mapTemp;
 }
 
-AMap* UMapGenerator::BuildMazeTree() {
+AMap* UMapGenerator::BuildMazeTree(UObject* context) {
     AMap* mapTemp{nullptr};
 
-    mapTemp = MakeMap();
-    Room* r1 = RandomFactory(MapTypes())->MakeRoom(1);
+    mapTemp = MakeMap(context);
+    ARoom* r1 = RandomFactory(MapTypes())->MakeRoom(1);
 
     mapTemp->AddRoom(r1);
 
@@ -82,11 +82,11 @@ AMap* UMapGenerator::BuildMazeTree() {
     return mapTemp;
 }
 
-AMap* UMapGenerator::BuildMazeKruskal() {
+AMap* UMapGenerator::BuildMazeKruskal(UObject* context) {
     AMap* mapTemp{nullptr};
 
-    mapTemp = MakeMap();
-    Room* r1 = RandomFactory(MapTypes())->MakeRoom(1);
+    mapTemp = MakeMap(context);
+    ARoom* r1 = RandomFactory(MapTypes())->MakeRoom(1);
 
     mapTemp->AddRoom(r1);
 
@@ -107,11 +107,13 @@ TArray<FMapOption>& UMapGenerator::MapTypes() {
     return mapTypes;
 }
 
-AMap* UMapGenerator::MakeMap() {
-    return NewObject<AMap>();
+AMap* UMapGenerator::MakeMap(UObject* context) {
+    //FVector spawnPosition {GetWorld()->OriginLocation()};
+    return context->GetWorld()->SpawnActor<AMap>();
+   //return NewObject<AMap>();
 }
 
-Room* UMapGenerator::BuildRoom(int id, /*Direction direction, */TArray<FMapOption> mapTypes) {
+ARoom* UMapGenerator::BuildRoom(int id, /*Direction direction, */TArray<FMapOption> mapTypes) {
     return RandomFactory(mapTypes)->MakeRoom(id);
 }
 

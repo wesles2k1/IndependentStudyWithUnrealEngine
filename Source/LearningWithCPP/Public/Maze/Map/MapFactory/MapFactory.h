@@ -7,9 +7,9 @@
 class MapFactory {
     public:
         // Factory Methods
-        virtual Room* MakeRoom(int id) const;
-        virtual Wall* MakeWall() const;
-        virtual Door* MakeDoor(Room* door1, Room* door2) const;
+        virtual ARoom* MakeRoom(int id) const;
+        virtual AWall* MakeWall() const;
+        virtual ADoor* MakeDoor(ARoom* door1, ARoom* door2) const;
     
     // Allow for Singleton behavior
     protected:

@@ -4,10 +4,10 @@ AMap::AMap() {
     
 }
 
-void AMap::AddRoom(Room* newRoom) {
+void AMap::AddRoom(ARoom* newRoom) {
     roomStorage.push_back(newRoom);
 }
 
-Room* AMap::GetRoom(int id) const {
+ARoom* AMap::GetRoom(int id) const {
     return roomStorage[id];
 }

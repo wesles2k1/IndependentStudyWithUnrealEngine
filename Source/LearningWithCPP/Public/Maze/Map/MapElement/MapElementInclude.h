@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Room/Room.h"
-#include "Door/Door.h"
-#include "Wall/Wall.h"
+#include "Room/ARoom.h"
+#include "Door/ADoor.h"
+#include "Wall/AWall.h"
 #include "Direction.h"

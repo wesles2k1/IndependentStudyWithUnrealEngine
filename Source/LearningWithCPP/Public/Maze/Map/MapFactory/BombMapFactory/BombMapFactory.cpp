@@ -2,10 +2,10 @@
 
 // Factory Methods
 
-Room* BombMapFactory::MakeRoom(int id) const {
-    return new BombRoom(id);
+ARoom* BombMapFactory::MakeRoom(int id) const {
+    return new ABombRoom(id);
 }
 
-Wall* BombMapFactory::MakeWall() const {
-    return new BombWall();
+AWall* BombMapFactory::MakeWall() const {
+    return new ABombWall();
 }

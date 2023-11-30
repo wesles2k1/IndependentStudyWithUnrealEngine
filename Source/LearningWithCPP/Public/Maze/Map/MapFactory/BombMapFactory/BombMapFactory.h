@@ -2,14 +2,14 @@
 
 #include "../MapFactory.h"
 
-#include "../../MapElement/Room/BombRoom/BombRoom.h"
-#include "../../MapElement/Wall/BombWall/BombWall.h"
+#include "../../MapElement/Room/BombRoom/ABombRoom.h"
+#include "../../MapElement/Wall/BombWall/ABombWall.h"
 
 class BombMapFactory: public MapFactory {
     public:
         // Factory Methods
-        virtual Room* MakeRoom(int id) const;
-        virtual Wall* MakeWall() const;
+        virtual ARoom* MakeRoom(int id) const;
+        virtual AWall* MakeWall() const;
 
     // Allow for Singleton behavior
     protected:

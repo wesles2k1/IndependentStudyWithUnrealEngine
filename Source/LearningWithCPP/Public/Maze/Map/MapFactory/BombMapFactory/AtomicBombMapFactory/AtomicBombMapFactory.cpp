@@ -2,6 +2,6 @@
 
 // Factory Methods
 
-Room* AtomicBombMapFactory::MakeRoom(int id) const {
-    return new AtomicBombRoom(id);
+ARoom* AtomicBombMapFactory::MakeRoom(int id) const {
+    return new AAtomicBombRoom(id);
 }

@@ -2,14 +2,14 @@
 
 #include "../MapFactory.h"
 
-#include "../../MapElement/Door/LockDoor/LockDoor.h"
-#include "../../MapElement/Wall/LockWall/LockWall.h"
+#include "../../MapElement/Door/LockDoor/ALockDoor.h"
+#include "../../MapElement/Wall/LockWall/ALockWall.h"
 
 class LockMapFactory: public MapFactory {
     public:
         // Factory Methods
-        virtual Door* MakeDoor(Room* door1, Room* door2) const;
-        virtual Wall* MakeWall() const;
+        virtual ADoor* MakeDoor(ARoom* door1, ARoom* door2) const;
+        virtual AWall* MakeWall() const;
 
     // Allow for Singleton behavior
     protected:

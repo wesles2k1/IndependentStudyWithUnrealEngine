@@ -2,10 +2,10 @@
 
 // Factory Methods
 
-Door* LockMapFactory::MakeDoor(Room* door1, Room* door2) const {
-    return new LockDoor(door1, door2);
+ADoor* LockMapFactory::MakeDoor(ARoom* door1, ARoom* door2) const {
+    return new ALockDoor(door1, door2);
 }
 
-Wall* LockMapFactory::MakeWall() const {
-    return new LockWall();
+AWall* LockMapFactory::MakeWall() const {
+    return new ALockWall();
 }
