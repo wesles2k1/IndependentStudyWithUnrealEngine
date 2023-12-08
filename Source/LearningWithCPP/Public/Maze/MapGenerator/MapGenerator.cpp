@@ -16,9 +16,12 @@ TArray<FMapOption> UMapGenerator::GetMapTypes() {
 }
 
 AMap* UMapGenerator::BuildMazeTwoRooms(UObject* context) {
+    UWorld* world {context->GetWorld()};
+    Singleton::Get<MapFactory>()->SetWorld(world);
+    
     AMap* mapTemp{nullptr};
 
-    mapTemp = MakeMap(context);
+    mapTemp = MakeMap(world);
     ARoom* r1 = RandomFactory(MapTypes())->MakeRoom(1);
     ARoom* r2 = RandomFactory(MapTypes())->MakeRoom(2);
     ADoor* theDoor = RandomFactory(MapTypes())->MakeDoor(r1, r2);
@@ -40,9 +43,12 @@ AMap* UMapGenerator::BuildMazeTwoRooms(UObject* context) {
 }
 
 AMap* UMapGenerator::BuildMazeProcedural(UObject* context) {
+    UWorld* world {context->GetWorld()};
+    Singleton::Get<MapFactory>()->SetWorld(world);
+
     AMap* mapTemp{nullptr};
 
-    mapTemp = MakeMap(context);
+    mapTemp = MakeMap(world);
     ARoom* rootRoom = RandomFactory(MapTypes())->MakeRoom(1);
 
     mapTemp->AddRoom(rootRoom);
@@ -67,9 +73,12 @@ AMap* UMapGenerator::BuildMazeProcedural(UObject* context) {
 }
 
 AMap* UMapGenerator::BuildMazeTree(UObject* context) {
+    UWorld* world {context->GetWorld()};
+    Singleton::Get<MapFactory>()->SetWorld(world);
+
     AMap* mapTemp{nullptr};
 
-    mapTemp = MakeMap(context);
+    mapTemp = MakeMap(world);
     ARoom* r1 = RandomFactory(MapTypes())->MakeRoom(1);
 
     mapTemp->AddRoom(r1);
@@ -83,9 +92,12 @@ AMap* UMapGenerator::BuildMazeTree(UObject* context) {
 }
 
 AMap* UMapGenerator::BuildMazeKruskal(UObject* context) {
+    UWorld* world {context->GetWorld()};
+    Singleton::Get<MapFactory>()->SetWorld(world);
+
     AMap* mapTemp{nullptr};
 
-    mapTemp = MakeMap(context);
+    mapTemp = MakeMap(world);
     ARoom* r1 = RandomFactory(MapTypes())->MakeRoom(1);
 
     mapTemp->AddRoom(r1);
@@ -107,9 +119,8 @@ TArray<FMapOption>& UMapGenerator::MapTypes() {
     return mapTypes;
 }
 
-AMap* UMapGenerator::MakeMap(UObject* context) {
-    //FVector spawnPosition {GetWorld()->OriginLocation()};
-    return context->GetWorld()->SpawnActor<AMap>();
+AMap* UMapGenerator::MakeMap(UWorld* world) {
+    return world->SpawnActor<AMap>();
    //return NewObject<AMap>();
 }
 

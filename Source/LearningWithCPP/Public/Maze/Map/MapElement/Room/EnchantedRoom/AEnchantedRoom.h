@@ -4,7 +4,7 @@
 
 class AEnchantedRoom: public ARoom {
     public:
-        AEnchantedRoom(int id): ARoom(id) {};
+        AEnchantedRoom(): ARoom() {};
 
         virtual AMapSite* Enter();
 };

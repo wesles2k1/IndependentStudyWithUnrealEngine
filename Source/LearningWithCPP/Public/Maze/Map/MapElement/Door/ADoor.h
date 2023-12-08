@@ -2,13 +2,25 @@
 
 #include "../Room/ARoom.h"
 
+#include "ADoor.generated.h"
+
 // Defines a ADoor to be put into a Map
-class ADoor: public AMapSite {
+UCLASS(BlueprintType)
+class LEARNINGWITHCPP_API ADoor: public AMapSite {
+    GENERATED_BODY()
+    
     public:
-        ADoor(ARoom* newRoom1 = nullptr, ARoom* newRoom2 = nullptr);
+        ADoor();
+        void Initialize(ARoom* newRoom1 = nullptr, ARoom* newRoom2 = nullptr);
         
         virtual AMapSite* Enter();
         ARoom* OtherSideFrom(ARoom*);
+
+        // Physical representation
+        UPROPERTY()
+        USceneComponent* root;
+        UPROPERTY(EditAnywhere)
+        UStaticMeshComponent* mesh;
 
     protected:
         ARoom* room1{nullptr};

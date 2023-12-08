@@ -4,7 +4,7 @@
 
 class ABombRoom: public ARoom {
     public:
-        ABombRoom(int id): ARoom(id) {};
+        ABombRoom(): ARoom() {};
 
         virtual AMapSite* Enter();
 };

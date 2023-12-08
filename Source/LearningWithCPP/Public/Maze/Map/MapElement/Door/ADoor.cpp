@@ -1,6 +1,14 @@
 #include "ADoor.h"
 
-ADoor::ADoor(ARoom* newRoom1, ARoom* newRoom2) {
+ADoor::ADoor() {
+    root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    RootComponent = root;
+
+    mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+    mesh->SetupAttachment(root);
+}
+
+void ADoor::Initialize(ARoom* newRoom1, ARoom* newRoom2) {
     room1 = newRoom1;
     room2 = newRoom2;
 }

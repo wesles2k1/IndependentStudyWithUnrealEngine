@@ -3,9 +3,11 @@
 // Factory Methods
 
 ARoom* BombMapFactory::MakeRoom(int id) const {
-    return new ABombRoom(id);
+    return nullptr;
+    //return new ABombRoom(id);
 }
 
 AWall* BombMapFactory::MakeWall() const {
-    return new ABombWall();
+    return nullptr;
+    //return new ABombWall();
 }

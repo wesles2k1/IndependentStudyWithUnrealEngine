@@ -5,7 +5,7 @@
 // Defines a ARoom to be put into a Map
 class ALockDoor: public ADoor {
     public:
-        ALockDoor(ARoom* door1, ARoom* door2): ADoor(door1, door2) {};
+        ALockDoor(ARoom* door1, ARoom* door2): ADoor() {};
 
         virtual AMapSite* Enter();
 };

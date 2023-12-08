@@ -8,53 +8,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c0b1651-b88e-40ec-b82e-951d97c5c1c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/EnchantedDoor/AEnchantedDoor.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/LockDoor/ALockDoor.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/ABombRoom.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/AtomicBombRoom/AAtomicBombRoom.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/EnchantedRoom/AEnchantedRoom.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/AWall.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/BombWall/ABombWall.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/LockWall/ALockWall.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LearningWithCPP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LearningWithCPP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Levels/Maze.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/Maze.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MyCustomContent/Menus/AnimalSelectorMenuWidget1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MyCustomContent/Menus/AnimalSelectorMenuWidget2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MyCustomContent/Menus/MazeControlMenuWidget.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MyCustomContent/Menus/TemperatureMenuWidget.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/MyCustomContent/Widgets/Menus/MazeControlMenuWidget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MyCustomContent/Widgets/Menus/MazeControlMenuWidget.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/Map.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/Map.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/Map.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/Map.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/Door.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/ADoor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/Door.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/ADoor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/EnchantedDoor/EnchantedDoor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/EnchantedDoor/AEnchantedDoor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/EnchantedDoor/EnchantedDoor.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/LockDoor/LockDoor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/LockDoor/ALockDoor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/LockDoor/LockDoor.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/MapElementInclude.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/MapElementInclude.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/MapSite.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/AMapSite.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/AtomicBombRoom/AtomicBombRoom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/AtomicBombRoom/AAtomicBombRoom.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/AtomicBombRoom/AtomicBombRoom.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/BombRoom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/ABombRoom.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/BombRoom.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/EnchantedRoom/EnchantedRoom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/EnchantedRoom/AEnchantedRoom.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/EnchantedRoom/EnchantedRoom.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/Room.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/ARoom.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/Room.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/ARoom.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/BombWall/BombWall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/BombWall/ABombWall.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/BombWall/BombWall.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/LockWall/LockWall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/LockWall/ALockWall.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/LockWall/LockWall.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/Wall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/AWall.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/Wall.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MyCustomContent/MazePieces/BP_Room.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MyCustomContent/MazePieces/BP_Room.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/MyCustomContent/MyGameInstance.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/MyCustomContent/MyGameInstance.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/AMapSite.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/AMapSite.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/ADoor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/ADoor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/ADoor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/ADoor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/EnchantedDoor/AEnchantedDoor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/EnchantedDoor/AEnchantedDoor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/LockDoor/ALockDoor.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Door/LockDoor/ALockDoor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/ARoom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/ARoom.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/ARoom.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/ARoom.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/ABombRoom.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/ABombRoom.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/AtomicBombRoom/AAtomicBombRoom.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/BombRoom/AtomicBombRoom/AAtomicBombRoom.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/EnchantedRoom/AEnchantedRoom.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Room/EnchantedRoom/AEnchantedRoom.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/AWall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/AWall.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/AWall.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapElement/Wall/AWall.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/BombMapFactory/AtomicBombMapFactory/AtomicBombMapFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/BombMapFactory/AtomicBombMapFactory/AtomicBombMapFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/BombMapFactory/AtomicBombMapFactory/AtomicBombMapFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/BombMapFactory/AtomicBombMapFactory/AtomicBombMapFactory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/BombMapFactory/BombMapFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/BombMapFactory/BombMapFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/BombMapFactory/BombMapFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/BombMapFactory/BombMapFactory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/EnchantedMapFactory/EnchantedMapFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/EnchantedMapFactory/EnchantedMapFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/EnchantedMapFactory/EnchantedMapFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/EnchantedMapFactory/EnchantedMapFactory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/LockMapFactory/LockMapFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/LockMapFactory/LockMapFactory.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/LockMapFactory/LockMapFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/LockMapFactory/LockMapFactory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/MapFactory.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/MapFactory.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/MapFactory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/Map/MapFactory/MapFactory.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/MapGenerator/MapGenerator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/LearningWithCPP/Public/Maze/MapGenerator/MapGenerator.cpp" afterDir="false" />
@@ -229,7 +203,10 @@
       <updated>1700425294811</updated>
       <workItem from="1700425296373" duration="578000" />
       <workItem from="1701353753106" duration="71000" />
-      <workItem from="1701357967061" duration="10022000" />
+      <workItem from="1701357967061" duration="17886000" />
+      <workItem from="1701384905103" duration="3876000" />
+      <workItem from="1701451826415" duration="4765000" />
+      <workItem from="1701464336166" duration="1908000" />
     </task>
     <servers />
   </component>

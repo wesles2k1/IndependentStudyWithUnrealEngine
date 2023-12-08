@@ -1,8 +1,15 @@
 #pragma once
 
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "AMapSite.generated.h"
+
 // Defines a component of the map/part of the room
-class AMapSite {
+UCLASS(BlueprintType, Blueprintable)
+class LEARNINGWITHCPP_API AMapSite : public AActor {
+	GENERATED_BODY()
+	
     public:
         virtual ~AMapSite() = default;
-        virtual AMapSite* Enter() = 0;
+        virtual AMapSite* Enter() {return nullptr;};
 };

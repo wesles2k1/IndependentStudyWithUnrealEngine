@@ -4,7 +4,7 @@
 
 class AAtomicBombRoom: public ABombRoom {
     public:
-        AAtomicBombRoom(int id): ABombRoom(id) {};
+        AAtomicBombRoom(): ABombRoom() {};
 
         virtual AMapSite* Enter();
 };

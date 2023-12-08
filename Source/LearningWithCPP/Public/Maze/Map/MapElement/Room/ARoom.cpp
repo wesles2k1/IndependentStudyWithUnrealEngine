@@ -1,6 +1,16 @@
 #include "ARoom.h"
 
-ARoom::ARoom(int newRoomID) {
+#include "Components/StaticMeshComponent.h"
+
+ARoom::ARoom() {
+    root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    RootComponent = root;
+
+    mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+    mesh->SetupAttachment(root);
+}
+
+void ARoom::Initialize(int newRoomID) {
     roomID = newRoomID;
 }
 

@@ -8,7 +8,7 @@
 #include "MapGenerator.generated.h"
 
 // Static class that builds a maze based on set MapTypes
-UCLASS(BlueprintType)
+UCLASS(BlueprintType, Blueprintable)
 class LEARNINGWITHCPP_API UMapGenerator final : public UObject {
     GENERATED_BODY()
     
@@ -40,7 +40,7 @@ class LEARNINGWITHCPP_API UMapGenerator final : public UObject {
         static TArray<FMapOption>& MapTypes();
 
         // Map Factory Method
-        static AMap* MakeMap(UObject* context);
+        static AMap* MakeMap(UWorld* world);
 
         static ARoom* BuildRoom(int id, /*Direction direction, */TArray<FMapOption> mapTypes);
 
